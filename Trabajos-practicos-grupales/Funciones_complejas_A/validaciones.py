@@ -5,6 +5,7 @@ para llevar adelante este beneficio.
 Codifique la siguiente Lista de 2 dimensiones "golosinas", que se corresponde a una maquina expendedora de golosinas
 donde la columna 0 es el codigo de la golosina, la columna 1 es la golosina, y la columna 2 es la cantidad (stock actual de golosinas.)"""
 
+#golosinas = [Columna 0 (Codigo golosina) | Columna 1 (Nombre golosina) | Columna 2 (Cantidad golosina)]
 golosinas = [[1, "KitKat",20],
              [2, "Chicles",50],
              [3, "Caramelos de Menta",50],
@@ -37,9 +38,24 @@ golosinasPedidas = []
 #####################
 def pedirGolosina():
     confirmarLegajo = int(input("Ingrese el número de su legajo de empleado, por favor! "))
-
     if confirmarLegajo in empleados:
         print(f"Bienvenido, {empleados[confirmarLegajo]}")
+        while True:
+            codigoGolosina = int(input("Ingrese el código de su golosina, si deseas salir use el código 99. "))
+            if codigoGolosina == 99:
+                break
+            encontrada = False
+            for golosina in golosinas:
+                if golosina[0] == codigoGolosina:
+                    encontrada = True
+                    if golosina[2] > 0:
+                        golosina[2] -= 1
+                        registrarPedido(golosina)
+                    else:
+                        print(f"Lo sentimos, la golosina {golosina[1]} no se encuentra disponible.")
+                    break
+            if not encontrada:
+                print("Codigo inválido")
     else:
         print("Usted no es un empleado de la empresa.")
         return
