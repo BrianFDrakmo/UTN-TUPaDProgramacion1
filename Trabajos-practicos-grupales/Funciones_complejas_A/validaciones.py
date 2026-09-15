@@ -32,7 +32,7 @@ clavesTecnico = ("admin", "CCCDDD", 2020)
 
 golosinasPedidas = []
 
-#Validaciones
+#Validaciones A
 
 #####################
 def pedirGolosina():
