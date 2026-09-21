@@ -1,0 +1,3 @@
+Brian Gabriel;Funes;80100;9.0
+Paula Lourdes;Torres;80101;9.0
+Mateo;Funes Olguin;81000;9.0
