@@ -1,27 +1,6 @@
-"""1. Codifique la clase Celda con los atributos."""
+"""import tpPoo_instancias
 
-"""class Celda:
-    def __init__(self, fila: int, columna: int, valor: str):
-        self.fila = fila
-        self.columna = columna
-        self.valor = valor
-
-class Matriz:
-    def __init__(self):
-        self.celdasMatriz = []
-
-    def buscar_celda(self, fila: int, columna: int):
-        for celda in self.celdasMatriz:
-            if celda.fila == fila and celda.columna == columna:
-                return celda
-        return None
-
-    def obtener_valor(self, fila: int, columna: int):
-        celda = self.buscar_celda(fila, columna)
-        if celda is not None:
-            return celda.valor
-        else:
-            return ("La fila y columna indicada no ha sido asignada en ninguna celda.")
+1. Codifique la clase Celda con los atributos.
 
 mi_matriz = Matriz()
 
@@ -77,22 +56,8 @@ f_busq = int(input("Ingrese fila a consultar: "))
 c_busq = int(input("Ingrese columna a consultar: "))
 print(mi_matriz.obtener_valor(f_busq, c_busq))
 
-"""
+2. Codifique las siguientes clases Python en archivos separados.
 
-"""2. Codifique las siguientes clases Python en archivos separados."""
-
-class Nota:
-
-    def __init__(self, catedra: str, notaExamen: float):
-        self.catedra = catedra
-        self.notaExamen = notaExamen
-
-class Alumno:
-
-    def __init__(self, nombreCompleto: str, legajo: int):
-        self.nombreCompleto = nombreCompleto
-        self.legajo = legajo
-        self.nota = []
 
 class CargaNotas:
 
@@ -103,7 +68,7 @@ class CargaNotas:
 
         while True:
             print("\n---- Ingrese datos del Alumno ----")
-            nombre_completo = input("Ingrese el nombre completo del alumno.")
+            nombreCompleto = input("Ingrese el nombre completo del alumno.")
 
             #Validamos legajo
             legajo_int = input("Ingrese el legajo (entero): ")
@@ -113,7 +78,7 @@ class CargaNotas:
             legajo = int(legajo_int)
 
             #Se instancia la clase Alumno
-            nuevo_alumno = Alumno(nombre_completo, legajo)
+            nuevo_alumno = Alumno(nombreCompleto, legajo)
 
             while True:
                 print ("\n---- Carga de Notas ----")
@@ -128,7 +93,7 @@ class CargaNotas:
                 nota_examen = float(nota_decimal)
 
                 nueva_nota = Nota(catedra, nota_examen)
-                nuevo_alumno.nota.append(nueva_nota)
+                nuevo_alumno.notas.append(nueva_nota)
 
 
                 #Preguntar si desea salir
@@ -137,7 +102,7 @@ class CargaNotas:
                     break
 
             #Validacion para que el alumno tenga al menos una nota
-            if len(nuevo_alumno.nota) == 0:
+            if len(nuevo_alumno.notas) == 0:
                 print("ERROR! El alumno debe tener al menos una nota cargada.")
                 continue
 
@@ -149,10 +114,10 @@ class CargaNotas:
                 break
 
         for alumno in alumnos:
-            print(f"\n Datos Alumno: {alumno.nombre_completo}")
+            print(f"\n Datos Alumno: {alumno.nombreCompleto}")
             print(f"Legajo: {alumno.legajo}")
             print("Notas:")
-            for notas in alumno.nota:
+            for notas in alumno.notas:
                 print(f"Catedra: {notas.catedra} | Notaa: {notas.nota_examen}")
 
             promedio = alumno.calcular_promedio()
@@ -160,3 +125,5 @@ class CargaNotas:
 
 if __name__ == "__main__":
     CargaNotas.main()
+
+"""

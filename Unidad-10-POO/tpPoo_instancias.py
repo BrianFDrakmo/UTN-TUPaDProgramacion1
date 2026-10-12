@@ -25,5 +25,23 @@ class Matriz:
 
 #Actividad 2
 
+class Nota:
+
+    def __init__(self, catedra: str, nota_examen: float):
+        self.catedra = catedra
+        self.nota_examen = nota_examen
+
 class Alumno:
-    def __init__(self, nombreCompleto, edad, legajo)
+
+    def __init__(self, nombreCompleto: str, legajo: int):
+        self.nombreCompleto = nombreCompleto
+        self.legajo = legajo
+        self.notas = []
+
+    def calcular_promedio(self):
+        if len(self.notas) == 0:
+            return 0.0
+        suma = 0
+        for nota in self.notas:
+            suma += nota.nota_examen
+        return suma / len(self.notas)
