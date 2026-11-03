@@ -1,6 +1,6 @@
-"""import tpPoo_instancias
+import tpPoo_instancias
 
-1. Codifique la clase Celda con los atributos.
+#1. Codifique la clase Celda con los atributos.
 
 mi_matriz = Matriz()
 
